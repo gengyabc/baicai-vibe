@@ -6,7 +6,7 @@ const MONITORED_COMMANDS = new Set([
   "review-quality",
 ])
 
-const PAUSE_MESSAGE = "子代理失败，已暂停。请在当前会话回复 继续。"
+const PAUSE_MESSAGE = "子智能体失败，已暂停。请在当前会话回复 继续。"
 
 type NotificationState = {
   lastCommand?: string
