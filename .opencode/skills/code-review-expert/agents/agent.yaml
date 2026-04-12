@@ -1,0 +1,7 @@
+interface:
+  display_name: "Code Review Expert"
+  short_description: "OpenCode code review: correctness, architecture, security, performance"
+  default_prompt: "Review the current git changes for correctness bugs, architecture drift, security risks, race conditions, error handling issues, performance regressions, and boundary condition bugs. Keep the output review-only unless I ask for fixes."
+
+# Agent-agnostic skill - works with any LLM provider.
+# No provider-specific configuration required.
