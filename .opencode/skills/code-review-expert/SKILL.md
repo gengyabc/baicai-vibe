@@ -9,7 +9,7 @@ description: "OpenCode-first code review of current git changes, staged work, PR
 
 Perform a structured review of the current git changes with focus on correctness, architecture, removal candidates, and security risks. Default to review-only output unless the user asks to implement changes.
 
-Follow @.opencode/rules/coding-style.md.
+Follow @.opencode/_vendor/baicai-vibe/rules/coding-style.md.
 
 OpenCode model split:
 - Use GPT-5.4-style reasoning for scoping, ranking severity, and synthesizing findings.

@@ -24,16 +24,16 @@ This command is staging-only. It must not install into stable locations.
 
 Follow:
 
-- `@.opencode/workflows/learn-skill-from-session.md`
-- `@.opencode/rules/learn-skill-from-session/candidate-rule.md`
-- `@.opencode/rules/learn-skill-from-session/promotion-rule.md`
-- `@.opencode/rules/learn-skill-from-session/user-alignment-gate.md`
+- `@.opencode/_vendor/baicai-vibe/workflows/learn-skill-from-session.md`
+- `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/candidate-rule.md`
+- `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/promotion-rule.md`
+- `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/user-alignment-gate.md`
 
 Use the supporting guidance in:
 
-- `@.opencode/rules/learn-skill-from-session/01-pattern-extraction.md`
-- `@.opencode/rules/learn-skill-from-session/02-worthiness-check.md`
-- `@.opencode/rules/learn-skill-from-session/03-synthesize-package.md`
+- `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/01-pattern-extraction.md`
+- `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/02-worthiness-check.md`
+- `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/03-synthesize-package.md`
 
 ## Inputs
 

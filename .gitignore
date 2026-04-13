@@ -67,3 +67,6 @@ logs/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# tem dev
+_vendor/

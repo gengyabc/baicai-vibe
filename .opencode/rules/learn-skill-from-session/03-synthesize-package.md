@@ -31,7 +31,7 @@ If the final type is `reject`, do not generate artifact drafts.
 
 ## Inputs
 
-Use only the selected result from worthiness check, source-session evidence, the explicit goal, relevant current workspace artifacts, existing stable artifacts only as needed for duplication or refinement context, and the governing rules from `@.opencode/rules/learn-skill-from-session/candidate-rule.md` and `@.opencode/rules/learn-skill-from-session/promotion-rule.md`.
+Use only the selected result from worthiness check, source-session evidence, the explicit goal, relevant current workspace artifacts, existing stable artifacts only as needed for duplication or refinement context, and the governing rules from `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/candidate-rule.md` and `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/promotion-rule.md`.
 
 Do not invent extra evidence.
 Do not broaden the candidate during packaging.
@@ -54,7 +54,7 @@ The package should make review easier, not harder.
 
 **CRITICAL**: Do NOT write any files until after the user alignment gate passes.
 
-Use `@.opencode/rules/learn-skill-from-session/user-alignment-gate.md`.
+Use `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/user-alignment-gate.md`.
 
 ### Presentation Order
 

@@ -40,7 +40,7 @@ Collect all `-f` arguments into a SOURCE_PATHS list.
 
 ## Required input
 
-- @.opencode/rules/graph-routing-docs.md
+- @.opencode/_vendor/baicai-vibe/rules/graph-routing-docs.md
 - Source files/directories from SOURCE_PATHS
 - Target doc file (existing or to be created)
 

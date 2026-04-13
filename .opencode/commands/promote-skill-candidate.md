@@ -34,8 +34,8 @@ Optional staged drafts:
 
 Relevant stable references:
 
-- `@.opencode/rules/learn-skill-from-session/promotion-rule.md`
-- `@.opencode/rules/learn-skill-from-session/candidate-rule.md`
+- `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/promotion-rule.md`
+- `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/candidate-rule.md`
 - existing stable artifacts under `.opencode/skills/`, `.opencode/workflows/`, and `.opencode/rules/`
 
 Do not use unstaged assumptions.

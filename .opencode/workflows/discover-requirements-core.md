@@ -6,8 +6,8 @@ Optimize for planner input quality: the output must contain enough information f
 
 ## Rules
 
-- @.opencode/rules/discovery-analysis-style.md
-- @.opencode/rules/discover-requirements-core-contract.md
+- @.opencode/_vendor/baicai-vibe/rules/discovery-analysis-style.md
+- @.opencode/_vendor/baicai-vibe/rules/discover-requirements-core-contract.md
 
 ---
 
@@ -230,7 +230,7 @@ Rules:
 
 ## Step 12 - Return contract result
 
-Return only the neutral structured result defined in @.opencode/rules/discover-requirements-core-contract.md.
+Return only the neutral structured result defined in @.opencode/_vendor/baicai-vibe/rules/discover-requirements-core-contract.md.
 
 Hard constraints:
 

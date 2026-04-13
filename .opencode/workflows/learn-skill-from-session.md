@@ -14,12 +14,12 @@ This workflow must not install or modify any stable artifacts.
 
 Before proceeding, ensure all referenced rules and guidance are accessible:
 
-- `@.opencode/rules/learn-skill-from-session/candidate-rule.md`
-- `@.opencode/rules/learn-skill-from-session/promotion-rule.md`
-- `@.opencode/rules/learn-skill-from-session/user-alignment-gate.md`
-- `@.opencode/rules/learn-skill-from-session/01-pattern-extraction.md`
-- `@.opencode/rules/learn-skill-from-session/02-worthiness-check.md`
-- `@.opencode/rules/learn-skill-from-session/03-synthesize-package.md`
+- `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/candidate-rule.md`
+- `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/promotion-rule.md`
+- `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/user-alignment-gate.md`
+- `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/01-pattern-extraction.md`
+- `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/02-worthiness-check.md`
+- `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/03-synthesize-package.md`
 
 ## Stage 0 - Input validation and scope definition
 
@@ -68,7 +68,7 @@ Also summarize the goal into concrete fit criteria:
 
 ## Stage 2 - Pattern extraction
 
-Use `@.opencode/rules/learn-skill-from-session/01-pattern-extraction.md` and `@.opencode/rules/learn-skill-from-session/candidate-rule.md`.
+Use `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/01-pattern-extraction.md` and `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/candidate-rule.md`.
 
 Identify candidate patterns that capture:
 
@@ -88,7 +88,7 @@ Each candidate must include:
 
 ## Stage 3 - Worthiness evaluation
 
-Use `@.opencode/rules/learn-skill-from-session/02-worthiness-check.md`.
+Use `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/02-worthiness-check.md`.
 
 Evaluate the candidates and select exactly one, or return `reject`.
 
@@ -111,7 +111,7 @@ Choose `reject` if the candidate is unclear or not strong enough.
 
 ## Stage 5 - Synthesize candidate
 
-Use `@.opencode/rules/learn-skill-from-session/03-synthesize-package.md` and the candidate and promotion rules.
+Use `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/03-synthesize-package.md` and the candidate and promotion rules.
 
 Produce the candidate summary for presentation (do NOT write files yet):
 
@@ -132,7 +132,7 @@ Prepare for user presentation:
 
 ## Stage 6 - User alignment gate
 
-Use `@.opencode/rules/learn-skill-from-session/user-alignment-gate.md`.
+Use `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/user-alignment-gate.md`.
 
 ### Present to User
 

@@ -9,6 +9,7 @@ This repo owns shared `agents`, `commands`, `rules`, `skills`, `plugins`, and `w
 - Source: `~/programming/baicai-vibe/.opencode`
 - Global install: `~/.config/opencode`
 - Project usage: `.opencode/_vendor/baicai-vibe` in downstream repos
+- Shared commands/rules reference that vendor path internally, so downstream repos must provide it
 
 ## Artifacts
 

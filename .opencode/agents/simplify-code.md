@@ -11,7 +11,7 @@ Your job is to simplify recently modified code after requirement alignment is cl
 
 ## Required skill usage
 
-Load and apply @.opencode/skills/simplify-code/SKILL.md.
+Load and apply @.opencode/_vendor/baicai-vibe/skills/simplify-code/SKILL.md.
 
 ## Scope
 

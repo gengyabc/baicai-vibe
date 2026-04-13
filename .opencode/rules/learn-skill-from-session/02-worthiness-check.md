@@ -20,7 +20,7 @@ If any of those is weak, prefer `reject`.
 
 Use the extracted candidate set from the pattern-extraction step, source-session evidence, the explicit goal, current workspace artifacts, and existing stable artifacts under `.opencode/skills/`, `.opencode/workflows/`, and `.opencode/rules/`.
 
-Apply the governing rules from `@.opencode/rules/learn-skill-from-session/candidate-rule.md` and `@.opencode/rules/learn-skill-from-session/promotion-rule.md`.
+Apply the governing rules from `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/candidate-rule.md` and `@.opencode/_vendor/baicai-vibe/rules/learn-skill-from-session/promotion-rule.md`.
 
 ## Required evaluation dimensions
 

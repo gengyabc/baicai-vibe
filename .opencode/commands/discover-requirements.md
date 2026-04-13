@@ -7,6 +7,6 @@ argument-hint: <initial-request>
 
 Discover requirements for: $ARGUMENTS
 
-Follow @.opencode/workflows/discover-requirements-core.md.
+Follow @.opencode/_vendor/baicai-vibe/workflows/discover-requirements-core.md.
 
-Use the shared contract in @.opencode/rules/discover-requirements-core-contract.md.
+Use the shared contract in @.opencode/_vendor/baicai-vibe/rules/discover-requirements-core-contract.md.
