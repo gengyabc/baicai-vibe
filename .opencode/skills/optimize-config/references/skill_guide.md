@@ -9,7 +9,13 @@ Use a skill when a capability should be reusable across multiple requests.
 ```
 .opencode/skills/<skill-name>/
   SKILL.md
+```
+
+Optional files for UI discoverability:
+
+```
   agents/openai.yaml
+  agents/agent.yaml
 ```
 
 Optional directories:
@@ -55,9 +61,9 @@ Good sections:
 
 Move long examples and detailed references into `references/`.
 
-## UI Metadata
+## UI Metadata (Optional)
 
-Create `agents/openai.yaml` with:
+If the skill needs UI discoverability, create `agents/openai.yaml` or `agents/agent.yaml` with:
 
 - `display_name`
 - `short_description`
@@ -78,7 +84,7 @@ Add `assets/` only when the skill needs files copied into outputs.
 When revising a skill:
 
 1. check whether `description` still matches behavior
-2. check whether `agents/openai.yaml` is stale
+2. if the skill has `agents/*.yaml`, check whether it's stale
 3. remove duplicated detail from `SKILL.md`
 4. move long guidance into references when useful
 

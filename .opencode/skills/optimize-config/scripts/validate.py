@@ -46,9 +46,10 @@ def validate_skill_dir(path: Path) -> List[str]:
         elif len(description) > 1024:
             errors.append(f"{skill_md}: description too long")
 
-    openai_yaml = path / "agents" / "openai.yaml"
-    if not openai_yaml.exists():
-        errors.append(f"{path}: missing agents/openai.yaml")
+    agents_dir = path / "agents"
+    agent_files = list(agents_dir.glob("*.yaml")) if agents_dir.exists() else []
+    if not agent_files:
+        pass  # optional: skills may have no agents/*.yaml for internal-only use
     return errors
 
 

@@ -103,7 +103,7 @@ Important checks:
 - skill names must be hyphen-case
 - `SKILL.md` must have frontmatter with `name` and `description`
 - command files must have frontmatter with `description` and `agent`
-- `agents/openai.yaml` should exist for skills created by this skill
+- `agents/openai.yaml` or `agents/agent.yaml` may exist for skills that need UI discoverability; optional for internal-only skills
 - descriptions should be concise and explicit about when to use the file
 
 The validator is intentionally lightweight. It should catch structure problems early, not replace judgment.
@@ -117,7 +117,7 @@ Use for reusable specialized capability.
 - Keep `SKILL.md` focused on procedure and decision points.
 - Put detailed references in `references/`.
 - Put deterministic helpers in `scripts/`.
-- Add `agents/openai.yaml` so the skill is easier to discover and invoke.
+- Optionally add `agents/openai.yaml` or `agents/agent.yaml` if the skill needs UI discoverability and invocation hints
 
 Read `@.opencode/_vendor/baicai-vibe/skills/optimize-config/references/skill_guide.md` when creating or heavily revising a skill.
 
