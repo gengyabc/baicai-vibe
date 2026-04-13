@@ -63,7 +63,7 @@ Follow this order:
 5. Validate format and naming.
 6. If relevant, explain what other files should call or load this file.
 
-Use `scripts/init_config.py` for first-pass scaffolding when the target type and name are clear.
+Use `@.opencode/_vendor/baicai-vibe/skills/optimize-config/scripts/init_config.py` for first-pass scaffolding when the target type and name are clear.
 
 ## Update Workflow
 
@@ -79,7 +79,7 @@ For `AGENTS.md`, a full rewrite is allowed when it produces a clearer single sou
 
 ## Optimization Workflow
 
-Use `scripts/analyze.py` first when the user asks to optimize or review quality.
+Use `@.opencode/_vendor/baicai-vibe/skills/optimize-config/scripts/analyze.py` first when the user asks to optimize or review quality.
 
 Evaluate these dimensions:
 
@@ -96,7 +96,7 @@ Then choose one of two outcomes:
 
 ## Validation Rules
 
-Use `scripts/validate.py` for quick checks.
+Use `@.opencode/_vendor/baicai-vibe/skills/optimize-config/scripts/validate.py` for quick checks.
 
 Important checks:
 
@@ -119,7 +119,7 @@ Use for reusable specialized capability.
 - Put deterministic helpers in `scripts/`.
 - Add `agents/openai.yaml` so the skill is easier to discover and invoke.
 
-Read `references/skill_guide.md` when creating or heavily revising a skill.
+Read `@.opencode/_vendor/baicai-vibe/skills/optimize-config/references/skill_guide.md` when creating or heavily revising a skill.
 
 ### Commands
 
@@ -129,7 +129,7 @@ Use for entry points a user invokes directly.
 - Put orchestration in workflows.
 - Show parameter handling and dispatch clearly.
 
-Read `references/command_guide.md` when creating or revising a command.
+Read `@.opencode/_vendor/baicai-vibe/skills/optimize-config/references/command_guide.md` when creating or revising a command.
 
 ### Rules
 
@@ -138,7 +138,7 @@ Use for constraints, schemas, or project-wide reusable guidance.
 - Prefer reusable statements over command-specific instructions.
 - Avoid copying workflow steps into rules.
 
-Read `references/rule_guide.md` when creating or revising a rule.
+Read `@.opencode/_vendor/baicai-vibe/skills/optimize-config/references/rule_guide.md` when creating or revising a rule.
 
 ### Workflows
 
@@ -147,7 +147,7 @@ Use for multi-step logic that commands or agents should execute.
 - State goal, inputs, steps, outputs, and constraints.
 - Keep the steps action-oriented.
 
-Read `references/workflow_guide.md` when creating or revising a workflow.
+Read `@.opencode/_vendor/baicai-vibe/skills/optimize-config/references/workflow_guide.md` when creating or revising a workflow.
 
 ### AGENTS.md
 
@@ -156,7 +156,7 @@ Use for the repository's global operating model.
 - Keep it stable and high signal.
 - Put reusable specifics into rules and workflows rather than bloating `AGENTS.md`.
 
-Read `references/agents_guide.md` before significant rewrites.
+Read `@.opencode/_vendor/baicai-vibe/skills/optimize-config/references/agents_guide.md` before significant rewrites.
 
 ## Script Reference
 
@@ -211,12 +211,12 @@ python scripts/optimize.py /repo/.opencode/skills/my-skill/SKILL.md --mode apply
 
 Read these files as needed:
 
-- `references/skill_guide.md`
-- `references/command_guide.md`
-- `references/rule_guide.md`
-- `references/workflow_guide.md`
-- `references/agents_guide.md`
-- `references/best_practices.md`
+- `@.opencode/_vendor/baicai-vibe/skills/optimize-config/references/skill_guide.md`
+- `@.opencode/_vendor/baicai-vibe/skills/optimize-config/references/command_guide.md`
+- `@.opencode/_vendor/baicai-vibe/skills/optimize-config/references/rule_guide.md`
+- `@.opencode/_vendor/baicai-vibe/skills/optimize-config/references/workflow_guide.md`
+- `@.opencode/_vendor/baicai-vibe/skills/optimize-config/references/agents_guide.md`
+- `@.opencode/_vendor/baicai-vibe/skills/optimize-config/references/best_practices.md`
 
 ## Constraints
 
