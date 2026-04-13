@@ -40,7 +40,7 @@ OpenCode model split:
 
 ### 2) SOLID + architecture smells
 
-- Load `references/solid-checklist.md` for specific prompts.
+- Load `@.opencode/_vendor/baicai-vibe/skills/code-review-expert/references/solid-checklist.md` for specific prompts.
 - Look for:
   - **SRP**: Overloaded modules with unrelated responsibilities.
   - **OCP**: Frequent edits to add behavior instead of extension points.
@@ -53,14 +53,14 @@ OpenCode model split:
 
 ### 3) Removal candidates + iteration plan
 
-- Load `references/removal-plan.md` for template.
+- Load `@.opencode/_vendor/baicai-vibe/skills/code-review-expert/references/removal-plan.md` for template.
 - Identify code that is unused, redundant, or feature-flagged off.
 - Distinguish **safe delete now** vs **defer with plan**.
 - Provide a follow-up plan with concrete steps and checkpoints (tests/metrics).
 
 ### 4) Security and reliability scan
 
-- Load `references/security-checklist.md` for coverage.
+- Load `@.opencode/_vendor/baicai-vibe/skills/code-review-expert/references/security-checklist.md` for coverage.
 - Check for:
   - XSS, injection (SQL/NoSQL/command), SSRF, path traversal
   - AuthZ/AuthN gaps, missing tenancy checks
@@ -72,7 +72,7 @@ OpenCode model split:
 
 ### 5) Code quality scan
 
-- Load `references/code-quality-checklist.md` for coverage.
+- Load `@.opencode/_vendor/baicai-vibe/skills/code-review-expert/references/code-quality-checklist.md` for coverage.
 - Check for:
   - **Error handling**: swallowed exceptions, overly broad catch, missing error handling, async errors
   - **Performance**: N+1 queries, CPU-intensive ops in hot paths, missing cache, unbounded memory
