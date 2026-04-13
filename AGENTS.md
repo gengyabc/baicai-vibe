@@ -2,11 +2,7 @@
 
 If OpenCode behavior is unclear, check `https://opencode.ai/docs/`.
 
-## Persistence
-
-Requirements go in `docs/requirements/<date>-<key>.md`.
-
-Plans go in `docs/plans/<date>-<key>.md`.
+## Artifact Formats
 
 Use `YYYY-MM-DD` dates and durable lowercase kebab-case keys.
 
