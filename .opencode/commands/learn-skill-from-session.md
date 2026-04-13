@@ -10,7 +10,7 @@ The second argument is the target goal or requirement for the reusable artifact:
 
 ## Validate arguments
 
-- `$1` is required and must be a fetchable session share link
+- `$1` is required and must be a fetchable session share link, use `session-extractor` skill to extract the content
 - `$2...` is required and must state the intended reusable outcome, problem, or requirement
 - if either argument is missing, STOP and report the missing input
 
