@@ -1,6 +1,6 @@
 ---
 description: Create or update routing docs with layered Mermaid flowcharts that stop at the right handoff depth
-model: bailian-coding-plan/MiniMax-M2.5
+model: bailian-coding-plan/glm-5
 ---
 
 The first argument is the target document path: `$1`

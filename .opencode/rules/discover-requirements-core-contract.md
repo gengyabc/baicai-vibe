@@ -1,31 +1,23 @@
-# Discovery Core Contract
+# Discover Requirements Core Contract
 
-The shared discovery core must return neutral output that a project wrapper can map into local artifact conventions.
+## Status
 
-## Required Shape
+- `ready`
+- `needs-more-discovery`
+- `blocked`
 
-```md
-- status: ready | needs-more-discovery | blocked
-- decomposition: single-step | multi-step
-- proposed-units:
-  - key: <durable-kebab-key>
-    title: <short title>
-    focus: <one-line focus>
-    in-scope: <list>
-    out-of-scope: <list>
-    constraints: <list>
-    assumptions: <list>
-    open-questions: <list>
-    success-criteria: <list>
-- approval-required: yes
-- remaining-open-questions: <list>
-- planning-risks: <list>
-```
+## Required Fields When Ready
 
-## Rules
+- Title
+- Focus
+- In Scope
+- Out of Scope
+- Constraints
+- Assumptions
+- Success Criteria
+- Decomposition
+- Key
 
-- output must be repo-agnostic
-- `key` values must be durable lowercase ASCII kebab-case identifiers
-- proposed units must be ordered when decomposition is `multi-step`
-- open questions that block planning must move `status` to `needs-more-discovery` or `blocked`
-- the core must not decide local persistence paths
+## Persistence Rule
+
+Only write a file when `status: ready`.

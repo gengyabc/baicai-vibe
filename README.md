@@ -4,6 +4,53 @@ Global OpenCode artifacts for reuse across projects.
 
 This repo owns shared `agents`, `commands`, `rules`, `skills`, `plugins`, and `workflows` that must stay repo-agnostic.
 
+## Prerequisites for Diagram Commands
+
+The diagram commands require CLI tools to be installed:
+
+| CLI | Package | System Requirement |
+|-----|---------|-------------------|
+| `cli-anything-drawio` | `pip install cli-anything-drawio` | Draw.io desktop app |
+| `cli-anything-inkscape` | `pip install cli-anything-inkscape` | Inkscape |
+| `excalidraw-cli` | `pip install excalidraw-cli` | None |
+
+Python 3.10+ required for all.
+
+## Install
+
+Run:
+
+```bash
+./scripts/install-global.sh
+```
+
+That creates:
+
+```text
+~/.config/opencode -> ~/programming/baicai-vibe/.opencode
+```
+
+## Project Use
+
+Downstream repos should point their vendor link at `~/.config/opencode`:
+
+```bash
+ln -s ~/.config/opencode .opencode/_vendor/baicai-vibe
+```
+
+## Validate
+
+```bash
+./scripts/validate-repo-agnostic.sh
+```
+
+## Check
+
+```bash
+ls -la ~/.config/opencode
+```
+
+
 ## Layout
 
 - Source: `~/programming/baicai-vibe/.opencode`
@@ -17,6 +64,9 @@ This repo owns shared `agents`, `commands`, `rules`, `skills`, `plugins`, and `w
 
 | Command | What it does | When to use |
 |---|---|---|
+| `drawio-cli` | Create/edit Draw.io diagrams via CLI | When user requests diagrams, flowcharts, or visual documentation |
+| `excalidraw-cli` | Create hand-drawn style diagrams | When user requests casual/sketch-style diagrams |
+| `inkscape-cli` | Create/edit vector graphics via CLI | When user requests SVG editing, logos, or vector illustrations |
 | `commit-changes` | Stages changes, writes a conventional commit message, and commits | After making code changes that need a clean, formatted commit |
 | `discover-requirements` | Transforms a user request into plan-ready proposed units through structured discovery | At the start of any feature or change request, before planning begins |
 | `learn-skill-from-session` | Extracts a reusable skill/workflow/rule candidate from a session and stages it for review | After a session produced a repeatable pattern worth capturing |
@@ -65,36 +115,3 @@ This repo owns shared `agents`, `commands`, `rules`, `skills`, `plugins`, and `w
 | `chat-manager` | Manages chat sessions and context | Always loaded; handles chat lifecycle |
 | `workflow-failure-notify` | Notifies on workflow failures | Always loaded; fires when a workflow step fails |
 
-## Install
-
-Run:
-
-```bash
-./scripts/install-global.sh
-```
-
-That creates:
-
-```text
-~/.config/opencode -> ~/programming/baicai-vibe/.opencode
-```
-
-## Project Use
-
-Downstream repos should point their vendor link at `~/.config/opencode`:
-
-```bash
-ln -s ~/.config/opencode .opencode/_vendor/baicai-vibe
-```
-
-## Validate
-
-```bash
-./scripts/validate-repo-agnostic.sh
-```
-
-## Check
-
-```bash
-ls -la ~/.config/opencode
-```
