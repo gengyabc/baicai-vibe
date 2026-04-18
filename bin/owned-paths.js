@@ -3,7 +3,6 @@
 module.exports = [
   'agents/baicai-vibe',
   'commands/baicai-vibe',
-  'opencode.json',
   'plugins/baicai-vibe',
   'rules/baicai-vibe',
   'skills/baicai-vibe',

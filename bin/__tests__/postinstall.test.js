@@ -171,12 +171,11 @@ describe('postinstall 安装流程', () => {
 describe('owned-paths 路径验证', () => {
   test('路径列表包含预期的目录结构', () => {
     expect(ownedPaths).toContain('agents/baicai-vibe');
-    expect(ownedPaths).toContain('commands/baicai-vibe');
-    expect(ownedPaths).toContain('skills/baicai-vibe');
-    expect(ownedPaths).toContain('workflows/baicai-vibe');
-    expect(ownedPaths).toContain('opencode.json');
-    expect(ownedPaths).toContain('plugins/baicai-vibe');
-  });
+      expect(ownedPaths).toContain('commands/baicai-vibe');
+      expect(ownedPaths).toContain('skills/baicai-vibe');
+      expect(ownedPaths).toContain('workflows/baicai-vibe');
+      expect(ownedPaths).toContain('plugins/baicai-vibe');
+    });
 
   test('路径格式正确（使用正斜杠）', () => {
     ownedPaths.forEach(p => {
