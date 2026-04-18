@@ -13,10 +13,12 @@
     "bin/link.js",
     "bin/owned-paths.js",
     "bin/postinstall.js",
-    "bin/preuninstall.js"
+    "bin/preuninstall.js",
+    "bin/unlink.js"
   ],
   "bin": {
-    "baicai-vibe-link": "bin/link.js"
+    "baicai-vibe-link": "bin/link.js",
+    "baicai-vibe-unlink": "bin/unlink.js"
   },
   "scripts": {
     "postinstall": "node bin/postinstall.js",

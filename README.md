@@ -83,6 +83,44 @@ For global installs:
 bun remove -g baicai-vibe
 ```
 
+> **Note:** Bun doesn't run `preuninstall` scripts for dependencies. Run `baicai-vibe-unlink` before removing to clean up `.opencode/` artifacts:
+> ```bash
+> baicai-vibe-unlink
+> bun remove baicai-vibe
+> ```
+>
+> Or for global installs:
+> ```bash
+> baicai-vibe-unlink --global
+> bun remove -g baicai-vibe
+> ```
+
+### Update
+
+To update to the latest version:
+
+```bash
+bun update baicai-vibe
+```
+
+Or pin a specific version:
+
+```bash
+bun add baicai-vibe@latest
+```
+
+For global installs:
+
+```bash
+bun update -g baicai-vibe
+```
+
+The `postinstall` script runs on each update, prompting before overwriting existing content. Use `BAICAI_VIBE_FORCE=true` to auto-accept in CI:
+
+```bash
+BAICAI_VIBE_FORCE=true bun update baicai-vibe
+```
+
 ## Project Use
 
 Downstream repos should install directly into their local `.opencode/` directory.
