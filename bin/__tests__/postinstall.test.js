@@ -175,6 +175,7 @@ describe('owned-paths 路径验证', () => {
     expect(ownedPaths).toContain('skills/baicai-vibe');
     expect(ownedPaths).toContain('workflows/baicai-vibe');
     expect(ownedPaths).toContain('opencode.json');
+    expect(ownedPaths).toContain('plugins/baicai-vibe');
   });
 
   test('路径格式正确（使用正斜杠）', () => {

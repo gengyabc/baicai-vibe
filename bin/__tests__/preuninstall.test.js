@@ -250,9 +250,9 @@ describe('清理完整性', () => {
         fs.mkdirSync(fullPath, { recursive: true });
       }
     });
-    
-    expect(fs.existsSync(path.join(projectDir, 'opencode.json'))).toBe(true);
-    
+
+    expect(fs.existsSync(path.join(projectDir, 'skills', 'baicai-vibe'))).toBe(true);
+
     utils.removeOwnedContent(projectDir, ownedPaths);
     
     ownedPaths.forEach(p => {

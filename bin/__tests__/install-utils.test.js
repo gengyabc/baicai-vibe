@@ -424,10 +424,10 @@ describe('文件操作函数', () => {
       expect(utils.hasBaicaiVibeContent('/nonexistent-dir')).toBe(false);
     });
 
-    test('根文件存在时返回 true', () => {
+    test('根目录存在时返回 true', () => {
       const rootFileDir = path.join(testDir, 'root-file');
       fs.mkdirSync(rootFileDir, { recursive: true });
-      fs.writeFileSync(path.join(rootFileDir, 'opencode.json'), '{}');
+      fs.mkdirSync(path.join(rootFileDir, 'skills', 'baicai-vibe'), { recursive: true });
 
       expect(utils.hasBaicaiVibeContent(rootFileDir)).toBe(true);
     });
@@ -449,6 +449,63 @@ describe('文件操作函数', () => {
     });
   });
 
+  describe('runInstall()', () => {
+    test('package.json 不存在时返回 false', () => {
+      const noPkgDir = path.join(testDir, 'no-package');
+      fs.mkdirSync(noPkgDir);
+
+      const runner = () => {
+        throw new Error('should not be called');
+      };
+
+      const result = utils.runInstall(noPkgDir, runner);
+      expect(result).toBe(false);
+    });
+
+    test('检测 bun.lockb 选择 bun', () => {
+      const bunDir = path.join(testDir, 'bun-project');
+      fs.mkdirSync(bunDir);
+      fs.writeFileSync(path.join(bunDir, 'package.json'), '{}');
+      fs.writeFileSync(path.join(bunDir, 'bun.lockb'), Buffer.from('bun lock'));
+
+      let calledWith = null;
+      const result = utils.runInstall(bunDir, (command, options) => {
+        calledWith = { command, options };
+      });
+
+      expect(result).toBe(true);
+      expect(calledWith).toEqual({
+        command: 'bun install',
+        options: {
+          cwd: bunDir,
+          stdio: 'inherit',
+          timeout: 300000,
+        },
+      });
+    });
+
+    test('无 bun.lockb 时选择 npm', () => {
+      const npmDir = path.join(testDir, 'npm-project');
+      fs.mkdirSync(npmDir);
+      fs.writeFileSync(path.join(npmDir, 'package.json'), '{}');
+
+      let calledWith = null;
+      const result = utils.runInstall(npmDir, (command, options) => {
+        calledWith = { command, options };
+      });
+
+      expect(result).toBe(true);
+      expect(calledWith).toEqual({
+        command: 'npm install',
+        options: {
+          cwd: npmDir,
+          stdio: 'inherit',
+          timeout: 300000,
+        },
+      });
+    });
+  });
+
   describe('backupOwnedContent()', () => {
     test('备份 owned paths 到备份目录', () => {
       const sourceDir = path.join(testDir, 'backup-source');
@@ -456,13 +513,11 @@ describe('文件操作函数', () => {
 
       fs.mkdirSync(path.join(sourceDir, 'skills', 'baicai-vibe', 'fix-bugs'), { recursive: true });
       fs.writeFileSync(path.join(sourceDir, 'skills', 'baicai-vibe', 'fix-bugs', 'SKILL.md'), 'content');
-      fs.writeFileSync(path.join(sourceDir, 'opencode.json'), '{"a":1}');
 
-      const backedUp = utils.backupOwnedContent(sourceDir, backupDir, ['skills/baicai-vibe', 'opencode.json']);
+      const backedUp = utils.backupOwnedContent(sourceDir, backupDir, ['skills/baicai-vibe']);
 
       expect(backedUp).toBe(true);
       expect(fs.existsSync(path.join(backupDir, 'skills', 'baicai-vibe', 'fix-bugs', 'SKILL.md'))).toBe(true);
-      expect(fs.readFileSync(path.join(backupDir, 'opencode.json'), 'utf8')).toBe('{"a":1}');
     });
   });
 

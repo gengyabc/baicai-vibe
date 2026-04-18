@@ -2,11 +2,13 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const crypto = require('crypto');
+const { execSync } = require('child_process');
 const ownedPaths = require('./owned-paths');
 
-const syncExcludes = ['node_modules', '.DS_Store', 'package-lock.json', '.gitignore'];
+const syncExcludes = ['node_modules', '.DS_Store', '.gitignore', 'package-lock.json'];
 const LOCK_POLL_MS = 100;
 const LOCK_TIMEOUT_MS = 30000;
+const INSTALL_TIMEOUT_MS = 300000;
 
 function resolvePkgDir() {
   return path.resolve(__dirname, '..');
@@ -219,6 +221,25 @@ function hasBaicaiVibeContent(dir, paths = ownedPaths) {
   return paths.some(rel => fs.existsSync(path.join(dir, rel)));
 }
 
+function runInstall(dir, installer = execSync) {
+  const packageJsonPath = path.join(dir, 'package.json');
+  if (!fs.existsSync(packageJsonPath)) return false;
+
+  const pm = fs.existsSync(path.join(dir, 'bun.lockb')) ? 'bun' : 'npm';
+
+  try {
+    installer(`${pm} install`, {
+      cwd: dir,
+      stdio: 'inherit',
+      timeout: INSTALL_TIMEOUT_MS,
+    });
+    return true;
+  } catch (err) {
+    console.error(`Failed to run ${pm} install in ${dir}:`, err.message);
+    return false;
+  }
+}
+
 module.exports = {
   resolvePkgDir,
   resolveProjectRoot,
@@ -236,4 +257,5 @@ module.exports = {
   syncDir,
   removeOwnedContent,
   hasBaicaiVibeContent,
+  runInstall,
 };
