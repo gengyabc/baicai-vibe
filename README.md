@@ -30,7 +30,19 @@ npm publish
 
 ### Local Development (unpublished)
 
-To test locally before publishing:
+`bun link` only creates the package link. It does **not** run `postinstall`, so `.opencode/` will not be copied automatically.
+
+To do both steps in one command, use the helper:
+
+```bash
+bun /path/to/baicai-vibe/bin/link.js
+# or
+bun ./bin/link.js /path/to/target-project
+```
+
+Run that from the target project. It will register the source repo with `bun link`, then link the package into the target project, then run `postinstall`.
+
+Or run the steps manually:
 
 ```bash
 # In this repo
@@ -38,9 +50,10 @@ bun link
 
 # In target project
 bun link baicai-vibe
+node node_modules/baicai-vibe/bin/postinstall.js
 ```
 
-Linked installs keep the same local-copy flow, so you can debug the install flow without publishing.
+The helper keeps the local-copy flow so you can debug the install behavior without publishing.
 
 ### Via bun (recommended)
 

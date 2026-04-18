@@ -9,10 +9,14 @@
     ".opencode/",
     "scripts/",
     "bin/install-utils.js",
+    "bin/link.js",
     "bin/owned-paths.js",
     "bin/postinstall.js",
     "bin/preuninstall.js"
   ],
+  "bin": {
+    "baicai-vibe-link": "bin/link.js"
+  },
   "scripts": {
     "postinstall": "node bin/postinstall.js",
     "preuninstall": "node bin/preuninstall.js",
