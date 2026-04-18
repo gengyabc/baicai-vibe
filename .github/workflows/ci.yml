@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  repo-agnostic:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install ripgrep
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ripgrep
+
+      - name: Repo-agnostic scan
+        run: |
+          bash -n scripts/validate-repo-agnostic.sh
+          bash scripts/validate-repo-agnostic.sh
+
+  node:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check JS syntax
+        run: |
+          node --check bin/postinstall.js
+          node --check bin/preuninstall.js
+          node --check bin/install-utils.js
+          node --check bin/owned-paths.js
+
+      - name: Dry-run pack
+        run: |
+          npm pack --dry-run

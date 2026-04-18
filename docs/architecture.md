@@ -20,21 +20,21 @@
 
 ## What Must Stay Out
 
-- direct references to `@.planning/phase/`
-- assumptions about `branch-phase.toml` or `phase-log.md`
-- assumptions about local artifact names such as `requirement.md`, `step.md`, `quality-review.md`, `test-checklist.md`, `decision.md`, `contract.md`, or `feature.feature`
+- direct references to legacy planning phase paths
+- assumptions about legacy phase log or branch metadata files
+- assumptions about local artifact names that belong to downstream project runtimes
 - project-specific naming or folder-numbering policies
 
 ## Discovery Split
 
 `discover-requirements` is split into:
 
-- shared core: `@.opencode/workflows/discover-requirements-core.md`
-- shared contract: `@.opencode/rules/discover-requirements-core-contract.md`
+- shared core: `@.opencode/workflows/baicai-vibe/discover-requirements-core.md`
+- shared contract: `@.opencode/rules/baicai-vibe/discover-requirements-core-contract.md`
 - local wrapper: owned by `baicai-vibe-coding`
 
 The shared core produces neutral proposed units. The contract defines the structured return format. Project wrappers decide folder naming, numbering, and file persistence.
 
 The core workflow enforces two hard constraints:
-- no references to `@.planning/phase/` or local artifact paths
+- no references to legacy planning phase paths or downstream artifact paths
 - no file writes — the local wrapper handles persistence after user approval

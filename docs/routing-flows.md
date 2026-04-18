@@ -4,49 +4,54 @@
 
 Scanned source path: `.opencode/` (no `-f` argument provided, defaulted to entire directory)
 
-### Commands (5 files)
+### Commands (8 files)
 
 | File | Description |
 |------|-------------|
-| `commands/commit-changes.md` | Stage changes and create commit with formatted message |
-| `commands/discover-requirements.md` | Initiate requirements discovery from user request |
-| `commands/learn-skill-from-session.md` | Derive reusable artifact candidate from session evidence |
-| `commands/promote-skill-candidate.md` | Promote staged candidate to stable location |
-| `commands/update-routing-docs.md` | Create or update routing documentation |
+| `commands/baicai-vibe/commit-changes.md` | Stage changes and create commit with formatted message |
+| `commands/baicai-vibe/discover-requirements.md` | Initiate requirements discovery from user request |
+| `commands/baicai-vibe/drawio-cli.md` | Create/edit Draw.io diagrams via CLI |
+| `commands/baicai-vibe/excalidraw-cli.md` | Create hand-drawn style diagrams |
+| `commands/baicai-vibe/inkscape-cli.md` | Create/edit vector graphics via CLI |
+| `commands/baicai-vibe/learn-skill-from-session.md` | Derive reusable artifact candidate from session evidence |
+| `commands/baicai-vibe/promote-skill-candidate.md` | Promote staged candidate to stable location |
+| `commands/baicai-vibe/update-routing-docs.md` | Create or update routing documentation |
 
 ### Workflows (2 files)
 
 | File | Description |
 |------|-------------|
-| `workflows/discover-requirements-core.md` | Transform user request into plan-ready proposed units |
-| `workflows/learn-skill-from-session.md` | Orchestrate artifact derivation from session evidence |
+| `workflows/baicai-vibe/discover-requirements-core.md` | Transform user request into plan-ready proposed units |
+| `workflows/baicai-vibe/learn-skill-from-session.md` | Orchestrate artifact derivation from session evidence |
 
 ### Rules (14 files)
 
 | File | Description |
 |------|-------------|
-| `rules/agent-output.md` | Agent output formatting constraints |
-| `rules/coding-style.md` | Code style and formatting standards |
-| `rules/context7.md` | Context management rules |
-| `rules/discover-requirements-core-contract.md` | Contract for discovery output structure |
-| `rules/discovery-analysis-style.md` | Analysis style guidelines for discovery |
-| `rules/entrypoint-compatibility.md` | Command entrypoint stability requirements |
-| `rules/graph-routing-docs.md` | Mermaid flowchart requirements for routing docs |
-| `rules/learn-skill-from-session/01-pattern-extraction.md` | Pattern extraction from session evidence |
-| `rules/learn-skill-from-session/02-worthiness-check.md` | Candidate worthiness evaluation criteria |
-| `rules/learn-skill-from-session/03-synthesize-package.md` | Candidate package synthesis rules |
-| `rules/learn-skill-from-session/candidate-rule.md` | Candidate formation constraints |
-| `rules/learn-skill-from-session/promotion-rule.md` | Promotion to stable location rules |
-| `rules/learn-skill-from-session/user-alignment-gate.md` | User approval gate requirements |
-| `rules/token-efficient-workflow.md` | Token efficiency guidelines |
+| `rules/baicai-vibe/agent-output.md` | Agent output formatting constraints |
+| `rules/baicai-vibe/coding-style.md` | Code style and formatting standards |
+| `rules/baicai-vibe/context7.md` | Context management rules |
+| `rules/baicai-vibe/discover-requirements-core-contract.md` | Contract for discovery output structure |
+| `rules/baicai-vibe/discovery-analysis-style.md` | Analysis style guidelines for discovery |
+| `rules/baicai-vibe/entrypoint-compatibility.md` | Command entrypoint stability requirements |
+| `rules/baicai-vibe/graph-routing-docs.md` | Mermaid flowchart requirements for routing docs |
+| `rules/baicai-vibe/learn-skill-from-session/01-pattern-extraction.md` | Pattern extraction from session evidence |
+| `rules/baicai-vibe/learn-skill-from-session/02-worthiness-check.md` | Candidate worthiness evaluation criteria |
+| `rules/baicai-vibe/learn-skill-from-session/03-synthesize-package.md` | Candidate package synthesis rules |
+| `rules/baicai-vibe/learn-skill-from-session/candidate-rule.md` | Candidate formation constraints |
+| `rules/baicai-vibe/learn-skill-from-session/promotion-rule.md` | Promotion to stable location rules |
+| `rules/baicai-vibe/learn-skill-from-session/user-alignment-gate.md` | User approval gate requirements |
+| `rules/baicai-vibe/token-efficient-workflow.md` | Token efficiency guidelines |
 
-### Skills (3 files)
+### Skills (5 files)
 
 | File | Description |
 |------|-------------|
-| `skills/code-review-expert/SKILL.md` | Code review with senior engineer lens |
-| `skills/fix-bugs/SKILL.md` | Diagnose and fix bugs with minimal changes |
-| `skills/simplify-code/SKILL.md` | Simplify recently written or heavily changed code |
+| `skills/baicai-vibe/code-review-expert/SKILL.md` | Code review with senior engineer lens |
+| `skills/baicai-vibe/fix-bugs/SKILL.md` | Diagnose and fix bugs with minimal changes |
+| `skills/baicai-vibe/optimize-config/SKILL.md` | Create, update, validate, and optimize OpenCode configuration files |
+| `skills/baicai-vibe/session-extractor/SKILL.md` | Extract session information from OpenCode links |
+| `skills/baicai-vibe/simplify-code/SKILL.md` | Simplify recently written or heavily changed code |
 
 ---
 

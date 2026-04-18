@@ -44,6 +44,13 @@ yarn-error.log*
 bun.lockb
 bun.lock
 
+# Test coverage
+coverage/
+
+# Install script temp files
+*.baicai-vibe-backup/
+*.baicai-vibe.lock
+
 # Build outputs
 *.tsbuildinfo
 
@@ -67,6 +74,3 @@ logs/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
-
-# tem dev
-_vendor/

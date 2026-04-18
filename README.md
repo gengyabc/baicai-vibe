@@ -2,7 +2,7 @@
 
 Global OpenCode artifacts for reuse across projects.
 
-This repo owns shared `agents`, `commands`, `rules`, `skills`, `plugins`, and `workflows` that must stay repo-agnostic.
+This repo owns shared `agents/baicai-vibe`, `commands/baicai-vibe`, `rules/baicai-vibe`, `skills/baicai-vibe`, `plugins/baicai-vibe`, and `workflows/baicai-vibe` that must stay repo-agnostic.
 
 ## Prerequisites for Diagram Commands
 
@@ -18,31 +18,100 @@ Python 3.10+ required for all.
 
 ## Install
 
-Run:
+### Prerequisites
+
+This package must be published to npm registry before `bun add baicai-vibe` will work:
 
 ```bash
-./scripts/install-global.sh
+bun publish
+# or
+npm publish
 ```
 
-That creates:
+### Local Development (unpublished)
 
-```text
-~/.config/opencode -> ~/programming/baicai-vibe/.opencode
+To test locally before publishing:
+
+```bash
+# In this repo
+bun link
+
+# In target project
+bun link baicai-vibe
+```
+
+Linked installs keep the same local-copy flow, so you can debug the install flow without publishing.
+
+### Via bun (recommended)
+
+```bash
+bun add baicai-vibe
+```
+
+Project install will:
+- Copy the repo's `.opencode/` artifacts into your project
+- Prompt before overwriting existing content
+
+Global install is also supported:
+
+```bash
+bun add -g baicai-vibe
+```
+
+That writes to your global OpenCode config directory instead of the project.
+
+To uninstall:
+```bash
+bun remove baicai-vibe
+```
+
+For global installs:
+```bash
+bun remove -g baicai-vibe
 ```
 
 ## Project Use
 
-Downstream repos should point their vendor link at `~/.config/opencode`:
+Downstream repos should install directly into their local `.opencode/` directory.
 
-```bash
-ln -s ~/.config/opencode .opencode/_vendor/baicai-vibe
-```
+Use `bun add baicai-vibe` for project install, `bun add -g baicai-vibe` for global install, and the matching `bun remove` command to uninstall.
 
 ## Validate
 
 ```bash
 ./scripts/validate-repo-agnostic.sh
 ```
+
+## Testing & CI
+
+### GitHub Actions
+
+CI runs automatically on:
+- Every push to any branch
+- Every pull request (create/update)
+
+| Test | Ubuntu | macOS | Windows |
+|------|--------|-------|---------|
+| repo-agnostic scan | ✓ | ✓ | - |
+| Node.js syntax | ✓ | ✓ | ✓ |
+| npm pack | ✓ | ✓ | ✓ |
+
+### Local Testing
+
+Run before pushing to catch issues early:
+
+```bash
+bash scripts/validate-repo-agnostic.sh && node --check bin/*.js && npm pack --dry-run
+```
+
+### CI/Non-interactive Install
+
+Postinstall scripts auto-approve prompts when:
+- `CI=true` (GitHub Actions, CI environments)
+- `BAICAI_VIBE_FORCE=true` (force mode)
+- No TTY (stdin not available)
+
+Set `BAICAI_VIBE_INSTALL_SCOPE=global` for global installs in CI.
 
 ## Check
 
@@ -55,8 +124,8 @@ ls -la ~/.config/opencode
 
 - Source: `~/programming/baicai-vibe/.opencode`
 - Global install: `~/.config/opencode`
-- Project usage: `.opencode/_vendor/baicai-vibe` in downstream repos
-- Shared commands/rules reference that vendor path internally, so downstream repos must provide it
+- Project install: `.opencode/` in downstream repos
+- Shared commands/rules reference the local `.opencode/` root directly
 
 ## Artifacts
 
@@ -114,4 +183,3 @@ ls -la ~/.config/opencode
 |---|---|---|
 | `chat-manager` | Manages chat sessions and context | Always loaded; handles chat lifecycle |
 | `workflow-failure-notify` | Notifies on workflow failures | Always loaded; fires when a workflow step fails |
-

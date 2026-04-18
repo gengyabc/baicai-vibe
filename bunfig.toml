@@ -1,0 +1,23 @@
+# Bun 配置文件
+# 文档：https://bun.sh/docs/runtime/bunfig
+
+[test]
+# 测试文件匹配模式
+testMatch = ["**/__tests__/**/*.test.js", "**/*.test.js"]
+
+# 测试超时时间（毫秒）
+timeout = 10000
+
+# 显示详细输出
+verbose = true
+
+# 覆盖率报告
+coverage = true
+coverageReporter = ["text"]
+
+[install]
+# 生产依赖
+production = false
+
+# 自动安装 peer dependencies
+peer = true
