@@ -55,6 +55,14 @@ node node_modules/baicai-vibe/bin/postinstall.js
 
 The helper keeps the local-copy flow so you can debug the install behavior without publishing.
 
+To unlink for dev:
+
+```bash
+node node_modules/baicai-vibe/bin/unlink.js
+```
+
+This removes the `.opencode/` artifacts copied by `postinstall`.
+
 ### Via bun (recommended)
 
 ```bash
@@ -185,7 +193,7 @@ ls -la ~/.config/opencode
 | Command | What it does | When to use |
 |---|---|---|
 | `drawio-cli` | Create/edit Draw.io diagrams via CLI | When user requests diagrams, flowcharts, or visual documentation |
-| `excalidraw-cli` | Create hand-drawn style diagrams | When user requests casual/sketch-style diagrams |
+| `excalidraw` | Create hand-drawn style diagrams | When user requests casual/sketch-style diagrams |
 | `inkscape-cli` | Create/edit vector graphics via CLI | When user requests SVG editing, logos, or vector illustrations |
 | `commit-changes` | Stages changes, writes a conventional commit message, and commits | After making code changes that need a clean, formatted commit |
 | `discover-requirements` | Transforms a user request into plan-ready proposed units through structured discovery | At the start of any feature or change request, before planning begins |
@@ -207,6 +215,7 @@ ls -la ~/.config/opencode
 | `code-review-expert` | Senior-engineer lens code review of git changes, diffs, PRs, or commit ranges | When asked to review code, audit a diff, inspect a PR, or check a branch |
 | `fix-bugs` | Diagnose and fix bugs, regressions, and failing tests with minimal targeted changes | When a user reports incorrect behavior, crashes, or a reproducible failure |
 | `optimize-config` | Create, update, validate, and optimize OpenCode configuration files | When asked to optimize, validate, create, or update any `.opencode` config file |
+| `session-extractor` | Extract session information from OpenCode database by session ID, tauri link, or share URL | When user provides an OpenCode link (tauri://localhost/... or https://opncd.ai/share/...) |
 | `simplify-code` | Refine recently written or heavily changed code for clarity while preserving behavior | After major refactors, large code additions, or when asked to simplify/clean up |
 
 ### Agents
@@ -234,3 +243,29 @@ ls -la ~/.config/opencode
 |---|---|---|
 | `chat-manager` | Manages chat sessions and context | Always loaded; handles chat lifecycle |
 | `workflow-failure-notify` | Notifies on workflow failures | Always loaded; fires when a workflow step fails |
+
+## References & Acknowledgments
+
+This project incorporates concepts and patterns from the following sources:
+
+### Commands
+
+| Source | License | Usage |
+|---|---|---|
+| [CLI-Anything (drawio)](https://github.com/HKUDS/CLI-Anything) by HKUDS | Apache-2.0 | Draw.io CLI command pattern |
+| [CLI-Anything (inkscape)](https://github.com/HKUDS/CLI-Anything) by HKUDS | Apache-2.0 | Inkscape CLI command pattern |
+
+### Workflow
+
+| Source | License | Usage |
+|---|---|---|
+| [excalidraw-diagram-skill](https://github.com/coleam00/excalidraw-diagram-skill) by coleam00 | No explicit license found | Excalidraw workflow reference |
+
+### Skills
+
+| Source | License | Usage |
+|---|---|---|
+| [code-review-expert](https://github.com/sanyuan0704/sanyuan-skills) by sanyuan0704 | MIT | Code review skill pattern |
+| [skill-creator](https://github.com/openai/codex) by OpenAI | Apache-2.0 | Skill creation pattern |
+
+References are included for attribution and provenance only. No third-party code is bundled from these sources unless noted elsewhere.

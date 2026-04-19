@@ -11,7 +11,7 @@ Scanned source path: `.opencode/` (no `-f` argument provided, defaulted to entir
 | `commands/baicai-vibe/commit-changes.md` | Stage changes and create commit with formatted message |
 | `commands/baicai-vibe/discover-requirements.md` | Initiate requirements discovery from user request |
 | `commands/baicai-vibe/drawio-cli.md` | Create/edit Draw.io diagrams via CLI |
-| `commands/baicai-vibe/excalidraw-cli.md` | Create hand-drawn style diagrams |
+| `commands/baicai-vibe/excalidraw.md` | Create hand-drawn style diagrams |
 | `commands/baicai-vibe/inkscape-cli.md` | Create/edit vector graphics via CLI |
 | `commands/baicai-vibe/learn-skill-from-session.md` | Derive reusable artifact candidate from session evidence |
 | `commands/baicai-vibe/promote-skill-candidate.md` | Promote staged candidate to stable location |
@@ -433,6 +433,73 @@ graph TD
 
 ---
 
+### session-extractor
+
+Input resolution → Query database → Summarize → Return JSON
+
+```mermaid
+graph TD
+    A[User provides link/ID] --> B{Input type?}
+    B -->|tauri://localhost link| C[Decode base64 → extract session_id]
+    B -->|share URL| D[Query session table by share_url]
+    B -->|session_id| E[Use directly]
+    C --> F[Query session metadata]
+    D --> F
+    E --> F
+    F --> G[Query messages optional]
+    G --> H[Summarize: metadata, message count, timestamps]
+    H --> I[Return JSON output]
+```
+
+**Bounds:**
+- tauri://localhost links, share URLs (https://opncd.ai/share/...), direct session IDs
+- macOS/Linux/Windows SQLite database paths
+
+**Guardrails:**
+- Database path is fixed per platform
+- Do not expose sensitive authentication data
+- Respect user privacy when sharing session info
+
+---
+
+### optimize-config
+
+Target layer → Read nearby files → Create/Update/Optimize → Validate → Summarize
+
+```mermaid
+graph TD
+    A[User requests config work] --> B{Target layer?}
+    B -->|skill| C[Check skill_guide.md]
+    B -->|command| D[Check command_guide.md]
+    B -->|rule| E[Check rule_guide.md]
+    B -->|workflow| F[Check workflow_guide.md]
+    B -->|AGENTS.md| G[Check agents_guide.md]
+    C --> H[Read current file + nearby files]
+    D --> H
+    E --> H
+    F --> H
+    G --> H
+    H --> I{Operation type?}
+    I -->|create| J[Minimal correct structure]
+    I -->|update| K[Preserve tone, minimal edits]
+    I -->|optimize| L[Evaluate: clarity, scope, reuse, duplication]
+    J --> M[Validate format and naming]
+    K --> M
+    L --> M
+    M --> N[Summarize changes or findings]
+```
+
+**Bounds:**
+- `.opencode/skills/`, `.opencode/commands/`, `.opencode/rules/`, `.opencode/workflows/`, `AGENTS.md`
+- Create, update, optimize, validate operations
+
+**Guardrails:**
+- Prefer smallest correct structural change
+- Do not duplicate guidance across layers
+- When uncertain, put logic in workflow not command
+
+---
+
 ## Routing Standards
 
 ### Layer Boundaries
@@ -471,13 +538,13 @@ graph TD
 ## Summary
 
 - **Source paths scanned:** 1 (`.opencode/`)
-- **Source files processed:** 24
-  - Commands: 5
+- **Source files processed:** 29
+  - Commands: 8
   - Workflows: 2
   - Rules: 14
-  - Skills: 3
-- **Action taken:** created
-- **Diagrams added:** 12 (one per significant routing file, grouped where appropriate)
+  - Skills: 5
+- **Action taken:** updated
+- **Diagrams added:** 14 (one per significant routing file, grouped where appropriate)
 - **Layer boundaries enforced:** Yes
 - **Stop conditions made explicit:** Yes
 - **Routing standards included:** Yes
