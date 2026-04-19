@@ -8,3 +8,8 @@ docs/
 bin/__tests__/
 *.md
 !README.md
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.lock

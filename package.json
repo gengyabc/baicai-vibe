@@ -8,6 +8,9 @@
   "files": [
     ".opencode/",
     "!.opencode/opencode.json",
+    "!.opencode/**/*.lock",
+    "!.opencode/**/.venv/",
+    "!.opencode/**/__pycache__/",
     "scripts/",
     "bin/install-utils.js",
     "bin/link.js",
