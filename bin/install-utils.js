@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const { execSync } = require('child_process');
 const ownedPaths = require('./owned-paths');
 
-const syncExcludes = ['node_modules', '.DS_Store', '.gitignore', 'package-lock.json'];
+const syncExcludes = ['node_modules', '.DS_Store', '.gitignore', 'package-lock.json', 'opencode.json'];
 const LOCK_POLL_MS = 100;
 const LOCK_TIMEOUT_MS = 30000;
 const INSTALL_TIMEOUT_MS = 300000;
