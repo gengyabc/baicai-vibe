@@ -315,17 +315,23 @@ describe('文件操作函数', () => {
       expect(fs.existsSync(path.join(destDir, 'new-file.txt'))).toBe(true);
     });
 
-    test('排除 package-lock.json 和 .gitignore', () => {
+    test('排除 package.json、lockfile 和 .gitignore', () => {
       const srcDir = path.join(testDir, 'src-root');
       const destDir = path.join(testDir, 'dest-root');
 
       fs.mkdirSync(srcDir, { recursive: true });
+      fs.writeFileSync(path.join(srcDir, 'package.json'), '{"name":"baicai-vibe"}');
+      fs.writeFileSync(path.join(srcDir, 'bun.lock'), 'bun lock');
+      fs.writeFileSync(path.join(srcDir, 'bun.lockb'), 'bun lockb');
       fs.writeFileSync(path.join(srcDir, 'package-lock.json'), '{"lock":true}');
       fs.writeFileSync(path.join(srcDir, '.gitignore'), 'node_modules');
       fs.writeFileSync(path.join(srcDir, 'kept.txt'), 'keep');
 
       utils.syncDir(srcDir, destDir);
 
+      expect(fs.existsSync(path.join(destDir, 'package.json'))).toBe(false);
+      expect(fs.existsSync(path.join(destDir, 'bun.lock'))).toBe(false);
+      expect(fs.existsSync(path.join(destDir, 'bun.lockb'))).toBe(false);
       expect(fs.existsSync(path.join(destDir, 'package-lock.json'))).toBe(false);
       expect(fs.existsSync(path.join(destDir, '.gitignore'))).toBe(false);
       expect(fs.existsSync(path.join(destDir, 'kept.txt'))).toBe(true);

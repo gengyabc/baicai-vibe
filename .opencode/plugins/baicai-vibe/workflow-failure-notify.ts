@@ -57,15 +57,7 @@ function stringifyError(error: unknown) {
 }
 
 async function notify(title: string, message: string) {
-  const mod = await import("node-notifier")
-  const notifier = mod.default as { notify: (input: { title: string; message: string; wait?: boolean; timeout?: number }) => void }
-
-  notifier.notify({
-    title,
-    message,
-    wait: false,
-    timeout: 5,
-  })
+  console.warn(`[${title}] ${message}`)
 }
 
 export const WorkflowFailureNotify: Plugin = async ({ client }) => {
